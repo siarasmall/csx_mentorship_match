@@ -69,7 +69,7 @@ class BipartiteGraph:
         # Add edges between mentors and mentees with negative compatibility score as weight
         for mentor in self.mentors:
             for mentee, weight in self.adjList[mentor]:
-                G.addEdge(mentor, mentee, weight = -weight)
+                G.add_edge(mentor, mentee, weight = -weight)
 
         # Find the maximum weight matching with Vertex objects preserved
         matching = nx.algorithms.matching.max_weight_matching(G, maxcardinality=True, weight='weight')
